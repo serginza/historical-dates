@@ -1,7 +1,5 @@
 # historical-dates
 
-![Uploading Desktop.png…]()
-
 This is layoyt __"Historical dates"__ with adaptive and animation. App based on webpack.
 Stack: React, styled-components, gsap, swiper, webpack
 
