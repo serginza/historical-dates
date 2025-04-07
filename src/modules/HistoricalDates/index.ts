@@ -1,1 +1,1 @@
-export { HistoricalDates } from './HistoricalDates'
+export { HistoricalDates } from './HistoricalDates';

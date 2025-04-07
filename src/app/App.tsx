@@ -6,7 +6,9 @@ const ROOT = '/';
 
 const MainPage = lazy(
   () =>
-    import(/* ChunkName: "pages/MainPage/MainPage" */ 'pages/MainPage/MainPage')
+    import(
+      /* ChunkName: "pages/MainPage/MainPage" */ 'pages/MainPage/MainPage'
+    ),
 );
 
 function SuspenseWrapper(page: ReactElement) {

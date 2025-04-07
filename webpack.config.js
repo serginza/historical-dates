@@ -11,10 +11,10 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      'modules': path.resolve(__dirname, 'src/modules/'),
-      'shared': path.resolve(__dirname, 'src/shared/'),
-      'app': path.resolve(__dirname, 'src/app/'),
-      'pages': path.resolve(__dirname, 'src/pages/'),
+      modules: path.resolve(__dirname, 'src/modules/'),
+      shared: path.resolve(__dirname, 'src/shared/'),
+      app: path.resolve(__dirname, 'src/app/'),
+      pages: path.resolve(__dirname, 'src/pages/'),
     },
   },
   module: {
@@ -27,6 +27,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },

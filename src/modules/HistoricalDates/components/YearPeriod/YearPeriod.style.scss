@@ -1,0 +1,30 @@
+.year-period-container {
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  // TODO: calc top
+  top: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5%;
+
+  .year {
+    font-family: 'PTSans', 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 160px;
+    letter-spacing: -2%;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .start-year {
+    color: rgb(93,96,239, 1);
+  }
+
+  .end-year {
+    color: rgb(239,93,168, 1);
+  }
+}

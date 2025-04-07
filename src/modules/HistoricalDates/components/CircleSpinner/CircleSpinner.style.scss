@@ -1,0 +1,78 @@
+.circle-spinner-container {
+  position: absolute;
+  width: 536px;
+  height: 530px;
+  top: 215px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.circle-spinner {
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  outline: 1px solid rgba(42, 56, 112, 0.3);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sphere-point {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(42, 56, 112, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'PTSans', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(66, 86, 122, 1);
+  cursor: pointer;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, outline 0.3s ease;
+}
+
+.sphere-point:hover {
+  width: 56px;
+  height: 56px;
+  outline: 1px solid rgba(42, 56, 112, 0.5);
+  background-color: rgba(244, 245, 249, 1);
+}
+
+.sphere-point .sphere-number,
+.sphere-point .sphere-title {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.sphere-point:hover .sphere-number {
+  opacity: 1;
+}
+
+.sphere-point.active {
+  width: 56px;
+  height: 56px;
+  outline: 1px solid rgba(42, 56, 112, 0.6);
+  background-color: rgba(244, 245, 249, 1);
+  cursor: default;
+}
+
+.sphere-point.active .sphere-number,
+.sphere-point.active .sphere-title {
+  opacity: 1;
+  transition: opacity 1s ease 0.5s;
+}
+
+.sphere-title {
+  position: absolute;
+  left: 75px;
+  font-family: 'PTSans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+}

@@ -29,5 +29,5 @@ export default tseslint.config(
       'no-multiple-empty-lines': ['error', { max: 2 }],
       'no-underscore-dangle': 'off',
     },
-  }
+  },
 );
