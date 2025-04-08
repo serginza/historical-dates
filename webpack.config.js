@@ -7,6 +7,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -48,10 +49,12 @@ module.exports = {
     open: true,
     hot: true,
     historyApiFallback: true,
+    contentBase: path.join(__dirname, 'dist'),
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
   ],
+  mode: 'development',
 };
