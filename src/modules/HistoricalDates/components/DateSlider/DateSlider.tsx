@@ -31,7 +31,7 @@ function DateSliderProto() {
     if (swiper) {
       direction === 'next' ? swiper.slideNext() : swiper.slidePrev();
       handleSlideChange(swiper);
-    };
+    }
   };
 
   return (

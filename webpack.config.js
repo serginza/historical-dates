@@ -49,12 +49,10 @@ module.exports = {
     open: true,
     hot: true,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'dist'),
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
   ],
-  mode: 'development',
 };

@@ -22,18 +22,11 @@ function SpherePaginationProto() {
     [activeIndex, data.length, setEventsPage],
   );
 
-  const PointPagination = ({
-    sphere,
-    index,
-  }: {
-    sphere: string;
-    index: number;
-  }): JSX.Element => {
+  const PointPagination = ({ index }: { index: number }): JSX.Element => {
     const isActive = index === activeIndex;
 
     return (
       <div
-        key={sphere}
         className={`pagination-point ${isActive ? 'active' : ''}`}
         onClick={() => onChangePagination(index)}
       />
@@ -43,7 +36,7 @@ function SpherePaginationProto() {
   return (
     <div className="sphere-pagination-container">
       {data.map((events, index) => (
-        <PointPagination sphere={events.sphere} index={index} />
+        <PointPagination key={events.sphere} index={index} />
       ))}
     </div>
   );
