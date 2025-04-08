@@ -1,13 +1,11 @@
 import { memo, useCallback, useContext, useEffect, useState } from 'react';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { ReactComponent as CarouselArrow } from 'shared/assets/icons/carousel-arrow.svg';
-import { ReactComponent as SliderArrow } from 'shared/assets/icons/slider-arrow.svg';
-import { padZero } from 'shared/utils';
 import { Context } from '../../HistoricalDates.context';
-import './DateSwipper.style.scss';
+import './DateSlider.style.scss';
 
-function DateSwipperProto() {
-  const { data, eventsPage, changeEventsBlock, swiperRef } = useContext(Context);
+function DateSliderProto() {
+  const { data, eventsPage, swiperRef } = useContext(Context);
 
   const [isFirstSlide, setIsFirstSlide] = useState<boolean>(true);
   const [isLastSlide, setIsLastSlide] = useState<boolean>(false);
@@ -18,7 +16,7 @@ function DateSwipperProto() {
     const timeoutId = setTimeout(() => {
       setDelayedEventsPage(eventsPage);
     }, 500);
-    
+
     return () => clearTimeout(timeoutId);
   }, [eventsPage]);
 
@@ -27,27 +25,21 @@ function DateSwipperProto() {
     setIsLastSlide(swiper.isEnd);
   }, []);
 
+  // TODO: функция убирает стрелки навигации, но не сенхронизирована с другими компонентами
+  const handleSlide = (direction: 'next' | 'prev') => {
+    const swiper = swiperRef?.current?.swiper;
+    if (swiper) {
+      direction === 'next' ? swiper.slideNext() : swiper.slidePrev();
+      handleSlideChange(swiper);
+    };
+  };
+
   return (
-    <article>
-      <div className="arrow-buttons-container">
-        <div className="slider-block-count">{`${padZero(eventsPage + 1)}/${padZero(data.length)}`}</div>
-        <div className="slider-arrows">
-          <button
-            className="slider-arrow-button arrow-prev"
-            onClick={() => changeEventsBlock(-1, true)}
-            disabled={eventsPage === 0}
-          >
-            <SliderArrow />
-          </button>
-          <button
-            className="slider-arrow-button"
-            onClick={() => changeEventsBlock(1, true)}
-            disabled={eventsPage === data.length - 1}
-          >
-            <SliderArrow />
-          </button>
-        </div>
+    <article className="date-slider-wrapper">
+      <div className="slider-sphere-title">
+        {data[delayedEventsPage].sphere}
       </div>
+      <div className="slider-horizontal-line" />
 
       <div className="slider-container">
         <div
@@ -58,11 +50,7 @@ function DateSwipperProto() {
         </div>
         <div className="carousel">
           <Swiper
-            spaceBetween={'80px'}
             slidesPerView="auto"
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 2500 }}
             direction="horizontal"
             onSlideChange={handleSlideChange}
             ref={swiperRef}
@@ -88,4 +76,4 @@ function DateSwipperProto() {
   );
 }
 
-export const DateSwipper = memo(DateSwipperProto);
+export const DateSlider = memo(DateSliderProto);

@@ -2,7 +2,14 @@
 
 ![Interface](interface.JPG)
 
-This is layoyt __"Historical dates"__ with adaptive and animation. App based on webpack.
-Stack: React, webpack, swiper, gsap, styled-components, scss 
+Макет "Исторические даты" с адаптивной версткой и анимациями.
+Стэк: React, webpack, swiper, gsap, styled-components, scss.
 
-Local run: install deps (npm intall or yarn install), run app by **"npm run dev"**. App based on **3030** port.
+Локальный запуск: клонировать репозиторий на диск, выполнить установку зависимостей (npm intall or yarn install), запустить сборку командой **"npm run dev"**. Сборка запускается на порту **3030** (localhost:3030). 
+
+Деплой проекта: _добавить след. комитом_
+
+This is layoyt **"Historical dates"** with adaptive and animation. App based on webpack.
+Stack: React, webpack, swiper, gsap, styled-components, scss
+
+Local run: clone repo to your device, install deps (npm intall or yarn install), run app by **"npm run dev"**. App based on **3030** port.

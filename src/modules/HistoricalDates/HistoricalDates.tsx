@@ -2,7 +2,16 @@ import { memo, useCallback, useRef, useState } from 'react';
 import { SwiperRef } from 'swiper/react';
 import gsap from 'gsap';
 import { HISTORY_DATA } from 'shared/constants';
-import { CircleSpinner, DateSwipper, HorizontalLine, TitleBlock, VerticalLine, YearPeriod } from './components';
+import {
+  CircleSpinner,
+  DateSlider,
+  HorizontalLine,
+  SliderPagination,
+  SpherePagination,
+  TitleBlock,
+  VerticalLine,
+  YearPeriod,
+} from './components';
 import { Context } from './HistoricalDates.context';
 import './HistoricalDates.style.scss';
 
@@ -15,19 +24,25 @@ function HistoricalDatesProto() {
     (direction: number, isSlider: boolean | undefined = false) => {
       const newPage = isSlider ? eventsPage + direction : eventsPage;
 
-      if (newPage < 0 || newPage > HISTORY_DATA.length - 1 || isAnimating) return;
+      if (newPage < 0 || newPage > HISTORY_DATA.length - 1 || isAnimating)
+        return;
 
       setIsAnimating(true);
       setEventsPage(newPage);
-      gsap.to('.slider-container', {
+      gsap.to('.date-slider-wrapper', {
         opacity: 0,
+        y: 0,
         duration: 0.5,
+        ease: 'power1.inOut',
         onComplete: () => {
           swiperRef?.current?.swiper.slideTo(0);
-          gsap.to('.slider-container', {
+          gsap.set('.date-slider-wrapper', { y: 10 });
+          gsap.to('.date-slider-wrapper', {
             opacity: 1,
+            y: 0,
             duration: 0.5,
-            onComplete: () => setIsAnimating(false)
+            ease: 'power1.inOut',
+            onComplete: () => setIsAnimating(false),
           });
         },
       });
@@ -47,11 +62,13 @@ function HistoricalDatesProto() {
     >
       <section className="historical-dates-container">
         <TitleBlock />
-        <VerticalLine/>
-        <HorizontalLine/>
+        <VerticalLine />
+        <HorizontalLine />
         <YearPeriod />
-        <DateSwipper />
+        <SliderPagination />
+        <DateSlider />
         <CircleSpinner />
+        <SpherePagination />
       </section>
     </Context.Provider>
   );

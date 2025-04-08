@@ -1,0 +1,146 @@
+.date-slider-wrapper {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 840px;
+
+  @media (max-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    top: 270px;
+  }
+
+  .slider-horizontal-line {
+    display: none;
+
+    @media (max-width: 1280px) {
+      display: block;
+      width: calc(100% - 40px);
+      height: 1px;
+      margin-left: 20px;
+      background-color: rgba(199, 205, 217, 1);
+    }
+  }
+
+  .slider-sphere-title {
+    display: none;
+
+    @media (max-width: 1280px) {
+      display: block;
+      margin-left: 20px;
+      font-family: 'PTSans', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 30px;
+      color: rgba(66, 86, 122, 1);
+    }
+  }
+
+  .slider-container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    @media (max-width: 1280px) {
+      margin: 0 20px;
+    }
+
+    .carousel-arrow-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      box-shadow: 0 0 15px rgba(56, 119, 238, 0.1);
+      margin: 0 20px;
+      // TODO: fix button size
+      padding: 0 2px;
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+
+    .carousel-arrow-button:hover {
+      box-shadow: 0px 0px 15px 0px rgba(56, 119, 238, 0.1);
+      cursor: pointer;
+    }
+
+    .carousel-arrow-button:active {
+      box-shadow: inset 0px 0px 5px 0px rgba(56, 119, 238, 0.2);
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .carousel {
+      flex-grow: 1;
+      // top: 840px;
+      // TODO: по центру с кнопками
+      // width: calc(8 / 9 * 100%);
+      height: auto;
+      width: 100%;
+      overflow: hidden;
+      cursor: grab;
+
+      .swiper-wrapper {
+        display: flex;
+
+      }
+
+      .event-card {
+        // TODO: динамически
+        width: 320px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-right: 80px;
+
+        @media (max-width: 1280px) {
+          width: 170px;
+          margin-right: 25px;
+
+        }
+      }
+
+      .card-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 25px;
+        line-height: 120%;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        color: rgba(56, 119, 238, 1);
+
+        @media (max-width: 1280px) {
+          font-size: 16px;
+        }
+      }
+
+      .card-desription {
+        font-family: 'PTSans', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 0;
+        color: rgba(66, 86, 122, 1);
+
+        @media (max-width: 1280px) {
+          font-size: 14px;
+          line-height: 145%;
+        }
+      }
+    }
+  }
+
+  .arrow-prev {
+    transform: rotate(180deg);
+  }
+}

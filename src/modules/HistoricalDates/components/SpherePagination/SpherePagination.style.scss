@@ -1,0 +1,30 @@
+.sphere-pagination-container {
+  display: none;
+
+  @media (max-width: 1280px) {
+    position: absolute;
+    min-width: 86px;
+    height: auto;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pagination-point {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(66, 86, 122, 1);
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .pagination-point.active {
+    opacity: 1;
+    transition: opacity ease 0.5s;
+    cursor: default;
+  }
+}

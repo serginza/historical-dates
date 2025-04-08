@@ -6,4 +6,8 @@
   transform: translateX(-50%);
   width: 1px;
   background-color: rgba(42, 56, 112, 0.1);
+
+  @media (max-width: 1280px) {
+    display: none;
+  }
 }

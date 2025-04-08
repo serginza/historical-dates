@@ -3,11 +3,10 @@ import './TitleBlock.style.scss';
 
 function TitleBlockProto() {
   return (
-    <article className='title-container'>
+    <article className="title-container">
       <div className="gradient"></div>
       <div className="title">Исторические даты</div>
     </article>
-    
   );
 }
 

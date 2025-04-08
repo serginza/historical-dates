@@ -23,11 +23,11 @@
 }
 
 :root {
-  --main-bg-color: 'rgba(244, 245, 249, 1)',; /* Основной цвет фона */
+  --main-bg-color: 'rgba(244, 245, 249, 1)';
 }
 
 body {
-  background-color: var(--main-bg-color);
+  background-color: rgba(244, 245, 249, 1);
 }
 
 button {

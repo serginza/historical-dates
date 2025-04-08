@@ -1,10 +1,18 @@
-import { memo, useCallback, useContext, useState, useEffect, useRef } from 'react';
+import {
+  memo,
+  useCallback,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+} from 'react';
 import gsap from 'gsap';
 import { Context } from '../../HistoricalDates.context';
 import './CircleSpinner.style.scss';
 
 function CircleSpinnerProto() {
-  const { data, eventsPage, setEventsPage, changeEventsBlock } = useContext(Context);
+  const { data, eventsPage, setEventsPage, changeEventsBlock } =
+    useContext(Context);
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const circleRef = useRef<HTMLDivElement | null>(null);
@@ -18,28 +26,31 @@ function CircleSpinnerProto() {
 
   const circleRadius = 530 / 2;
 
-  const onChangeSphere = useCallback((index: number) => {
-    if (index === activeIndex) return;
+  const onChangeSphere = useCallback(
+    (index: number) => {
+      if (index === activeIndex) return;
 
-    const rotationAngle = (360 / data.length) * (index - activeIndex);
-    
-    // Анимация вращения внешнего круга
-    gsap.to(circleRef.current, {
-      rotation: `-=${rotationAngle}`,
-      duration: 1,
-      ease: 'power2.inOut',
-    });
+      const rotationAngle = (360 / data.length) * (index - activeIndex);
 
-    // Анимация обратного вращения для каждого элемента
-    data.forEach((_, i) => {
-      gsap.to(spheresRef.current[i], {
-        rotation: `+=${rotationAngle}`, 
+      // Анимация вращения внешнего круга
+      gsap.to(circleRef.current, {
+        rotation: `-=${rotationAngle}`,
+        duration: 1,
+        ease: 'power2.inOut',
       });
-    });
 
-    setActiveIndex(index);
-    setEventsPage(index);
-  }, [activeIndex, data.length, setEventsPage]);
+      // Анимация обратного вращения для каждого элемента
+      data.forEach((_, i) => {
+        gsap.to(spheresRef.current[i], {
+          rotation: `+=${rotationAngle}`,
+        });
+      });
+
+      setActiveIndex(index);
+      setEventsPage(index);
+    },
+    [activeIndex, data.length, setEventsPage],
+  );
 
   return (
     <article className="circle-spinner-container">
@@ -50,8 +61,10 @@ function CircleSpinnerProto() {
 
           return (
             <div
-              key={index}
-              ref={(el) => { spheresRef.current[index] = el; }}
+              key={events.sphere}
+              ref={(el) => {
+                spheresRef.current[index] = el;
+              }}
               className={`sphere-point ${isActive ? 'active' : ''}`}
               style={{
                 transform: `rotate(${angle}deg) translateY(-${circleRadius}px) rotate(-${angle}deg)`,
@@ -59,7 +72,7 @@ function CircleSpinnerProto() {
               onClick={() => onChangeSphere(index)}
             >
               <div className="sphere-number">{index + 1}</div>
-              <div className='sphere-title'>{events.sphere}</div>
+              <div className="sphere-title">{events.sphere}</div>
             </div>
           );
         })}

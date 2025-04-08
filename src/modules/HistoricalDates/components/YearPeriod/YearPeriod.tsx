@@ -36,7 +36,11 @@ function YearPeriodProto() {
     const currentStartYear = data[eventsPage].startYear;
     const currentEndYear = data[eventsPage].endYear;
 
-    animateYearChange(startYearRef, prevYears.current.startYear, currentStartYear);
+    animateYearChange(
+      startYearRef,
+      prevYears.current.startYear,
+      currentStartYear,
+    );
     animateYearChange(endYearRef, prevYears.current.endYear, currentEndYear);
 
     prevYears.current.startYear = currentStartYear;
