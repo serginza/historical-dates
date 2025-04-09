@@ -29,11 +29,11 @@
     @media (max-width: 1280px) {
       display: block;
       margin-left: 20px;
-      font-family: 'PTSans', sans-serif;
+      font-family: var(--font-ptsans);
       font-weight: 700;
       font-size: 16px;
       line-height: 30px;
-      color: rgba(66, 86, 122, 1);
+      color: var(--steel-blue-100);
     }
   }
 
@@ -46,7 +46,7 @@
     box-sizing: border-box;
 
     @media (max-width: 1280px) {
-      margin: 0 20px;
+      margin-left: 20px;
     }
 
     .carousel-arrow-button {
@@ -57,7 +57,7 @@
       align-items: center;
       justify-content: center;
       background-color: white;
-      box-shadow: 0 0 15px rgba(56, 119, 238, 0.1);
+      box-shadow: 0 0 15px var(--meduim-blue-10);
       margin: 0 20px;
       // TODO: fix button size
       padding: 0 2px;
@@ -68,12 +68,12 @@
     }
 
     .carousel-arrow-button:hover {
-      box-shadow: 0px 0px 15px 0px rgba(56, 119, 238, 0.1);
+      box-shadow: 0px 0px 15px 0px var(--meduim-blue-10);
       cursor: pointer;
     }
 
     .carousel-arrow-button:active {
-      box-shadow: inset 0px 0px 5px 0px rgba(56, 119, 238, 0.2);
+      box-shadow: inset 0px 0px 5px 0px var(--meduim-blue-20);
     }
 
     .hidden {
@@ -110,12 +110,12 @@
       }
 
       .card-title {
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: var(--font-bebas);
         font-size: 25px;
         line-height: 120%;
         letter-spacing: 0;
         text-transform: uppercase;
-        color: rgba(56, 119, 238, 1);
+        color: var(--meduim-blue-100);
 
         @media (max-width: 1280px) {
           font-size: 16px;
@@ -123,12 +123,12 @@
       }
 
       .card-desription {
-        font-family: 'PTSans', sans-serif;
+        font-family: var(--font-ptsans);
         font-weight: 400;
         font-size: 20px;
         line-height: 30px;
         letter-spacing: 0;
-        color: rgba(66, 86, 122, 1);
+        color: var(--steel-blue-100);
 
         @media (max-width: 1280px) {
           font-size: 14px;

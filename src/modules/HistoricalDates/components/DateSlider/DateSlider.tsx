@@ -9,7 +9,6 @@ function DateSliderProto() {
 
   const [isFirstSlide, setIsFirstSlide] = useState<boolean>(true);
   const [isLastSlide, setIsLastSlide] = useState<boolean>(false);
-  // TODO: избавиться от костыля
   const [delayedEventsPage, setDelayedEventsPage] = useState(eventsPage);
 
   useEffect(() => {
@@ -26,13 +25,13 @@ function DateSliderProto() {
   }, []);
 
   // TODO: функция убирает стрелки навигации, но не сенхронизирована с другими компонентами
-  const handleSlide = (direction: 'next' | 'prev') => {
-    const swiper = swiperRef?.current?.swiper;
-    if (swiper) {
-      direction === 'next' ? swiper.slideNext() : swiper.slidePrev();
-      handleSlideChange(swiper);
-    }
-  };
+  // const handleSlide = (direction: 'next' | 'prev') => {
+  //   const swiper = swiperRef?.current?.swiper;
+  //   if (swiper) {
+  //     direction === 'next' ? swiper.slideNext() : swiper.slidePrev();
+  //     handleSlideChange(swiper);
+  //   }
+  // };
 
   return (
     <article className="date-slider-wrapper">
