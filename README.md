@@ -7,6 +7,7 @@
 
 Локальный запуск: клонировать репозиторий на диск, выполнить установку зависимостей (npm intall или yarn install), запустить сборку командой **"npm run dev"**. Сборка запускается на порту **3030** (localhost:3030).
 
+Deploy: https://serginza.github.io/historical-dates/
 
 This is layoyt **"Historical dates"** with adaptive and animation. App based on webpack.
 Stack: React, webpack, swiper, gsap, styled-components, scss.
