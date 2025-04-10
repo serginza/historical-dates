@@ -1,1 +1,0 @@
-export { YearPeriod } from './YearPeriod';

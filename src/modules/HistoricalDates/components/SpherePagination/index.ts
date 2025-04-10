@@ -1,1 +1,0 @@
-export { SpherePagination } from './SpherePagination';
