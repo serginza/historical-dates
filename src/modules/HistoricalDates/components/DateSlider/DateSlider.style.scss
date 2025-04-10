@@ -29,7 +29,7 @@
     @media (max-width: 1280px) {
       display: block;
       margin-left: 20px;
-      font-family: var(--font-ptsans);
+      font-family: var(--font-ptsans-bold);
       font-size: 16px;
       line-height: 30px;
       color: var(--steel-blue-100);
@@ -43,10 +43,6 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-
-    @media (max-width: 1280px) {
-      margin-left: 20px;
-    }
 
     .carousel-arrow-button {
       width: 40px;
@@ -91,6 +87,10 @@
 
       .swiper-wrapper {
         display: flex;
+
+        @media (max-width: 1280px) {
+          margin: 0 20px;
+        }
       }
 
       .event-card {
