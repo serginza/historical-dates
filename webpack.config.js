@@ -36,6 +36,13 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack', 'url-loader'],
       },
+      {
+        test: /\.(woff(2)?|ttf|eot|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
+      },
     ],
   },
   devtool: 'source-map',

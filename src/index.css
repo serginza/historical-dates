@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'PTSans';
-  src: url(./shared/assets/fonts/PTSans-Bold.ttf);
+  src: url(./shared/assets/fonts/New-PTSans-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PTSans Bold';
+  src: url(./shared/assets/fonts/New-PTSans-Bold.ttf);
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'PTSans';
-  src: url(./shared/assets/fonts/PTSans-Regular.ttf);
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Bebas Neue';
-  src: url(./shared/assets/fonts/BebasNeue-Regular.ttf);
-  font-weight: 400;
+  src: url(./shared/assets/fonts/New-BebasNeue-Regular.ttf);
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -37,6 +37,7 @@
   --meduim-blue-20: rgba(56, 119, 238, 0.2);
   --meduim-blue-100: rgba(56, 119, 238, 1);
   --font-ptsans: 'PTSans', sans-serif;
+  --font-ptsans-bold: 'PTSans Bold', sans-serif;
   --font-bebas: 'Bebas Neue', sans-serif;
 }
 
